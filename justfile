@@ -7,6 +7,7 @@ manifestLocation := "./MANIFEST.MF"
 
 libsDir := "./libs"
 
+classPath := libsDir / "lwjgl/lwjgl.jar" + ":" +      libsDir / "lwjgl/lwjgl-glfw.jar"
 
 mainFile := "./src/com/morblockius/Main.java"
 
@@ -22,7 +23,7 @@ makeDirs:
     mkdir -p {{compileDir}}
 
 compile:
-    javac -sourcepath {{srcDir}} -d {{compileDir}} {{mainFile}}
+    javac -cp {{classPath}} -sourcepath {{srcDir}} -d {{compileDir}} {{mainFile}}
 
 pack:
     jar cmf {{manifestLocation}}  {{jarLocation}} -C {{compileDir}} .
