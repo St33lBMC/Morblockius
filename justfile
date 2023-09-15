@@ -7,7 +7,7 @@ manifestLocation := "./MANIFEST.MF"
 
 libsDir := "./libs"
 
-classPath := ".:" + libsDir / "lwjgl/lwjgl.jar" + ":" + libsDir / "lwjgl/lwjgl-glfw.jar" + ":" + libsDir / "lwjgl/lwjgl3-awt-0.1.8.jar"
+classPath := "libs/lwjgl/natives/*:libs/lwjgl/*"
 
 mainFile := "./src/com/morblockius/Main.java"
 
