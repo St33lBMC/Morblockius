@@ -7,13 +7,13 @@ manifestLocation := "./MANIFEST.MF"
 
 libsDir := "./libs"
 
-classPath := libsDir / "lwjgl/lwjgl.jar" + ":" +      libsDir / "lwjgl/lwjgl-glfw.jar"
+classPath := ".:" + libsDir / "lwjgl/lwjgl.jar" + ":" + libsDir / "lwjgl/lwjgl-glfw.jar" + ":" + libsDir / "lwjgl/lwjgl3-awt-0.1.8.jar"
 
 mainFile := "./src/com/morblockius/Main.java"
 
 
 run: build
-    java -jar build/build.jar
+    java -classpath ".:./build/build.jar:libs/lwjgl/natives/*:libs/lwjgl/*" com.morblockius.Main  
 
 build: makeDirs compile pack
 
